@@ -24,7 +24,7 @@ export const AddContact = () => {
         <div>
 
           <div className="container position-relative pt-5">
-            <h1 className="text-center">Add a New Contact</h1>
+            <h1 className="text-center text-white">Add a New Contact</h1>
             <FontAwesomeIcon icon={faUserXmark}  className="position-absolute top-0 end-0 m-3 p-4" size="2x"
             onClick={handeleClick} style={{ cursor: "pointer", color: "red" }}
             />

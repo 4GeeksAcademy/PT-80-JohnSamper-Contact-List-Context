@@ -8,16 +8,17 @@ export const Home = () => {
   const {store, dispatch} =useGlobalReducer()
 
 	return (
-		<div className="container">
+		<div className="container ">
 			<div className="d-flex">
-				<div className="ms-auto">
+				<div className="ms-auto p-4 ">
 					<Link to="/AddContact">
-						<button className="btn btn-success">Add New Contact </button>
+						<button className="btn btn-success ">Add New Contact </button>
 					</Link>
 				</div>
 			</div>
-			<Contact/>
-		
+			<Contact className=" g-3 "/>
+			
+			
 		</div>
 	);
 }; 

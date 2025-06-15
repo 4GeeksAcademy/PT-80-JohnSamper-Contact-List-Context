@@ -1,0 +1,16 @@
+.custom-card-bg {
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/26872d1b-be2c-4230-acc9-7337ff87b5c5/d5tqhqx-95d80945-a6c3-4474-8321-dadde4ac171e.jpg/v1/fill/w_900,h_563,q_75,strp/wallpaper___straw_hat_pirates_logo_by_kalangozilla_d5tqhqx-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTYzIiwicGF0aCI6IlwvZlwvMjY4NzJkMWItYmUyYy00MjMwLWFjYzktNzMzN2ZmODdiNWM1XC9kNXRxaHF4LTk1ZDgwOTQ1LWE2YzMtNDQ3NC04MzIxLWRhZGRlNGFjMTcxZS5qcGciLCJ3aWR0aCI6Ijw9OTAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.rW5qTHUK5Ei3LXFMuzv7bjffLBV3dXQWHY25TxWA8ck');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  color: rgb(255, 255, 255); /* if needed for contrast */
+  height: 300px; /* or whatever size you need */
+}
+
+body {
+  background-image: url('https://wallpapersok.com/images/hd/one-piece-wano-at-peace-kg3wrhgl3zu70kdv.jpg');  
+  background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    height: 1000px; /* or whatever size you need */
+}
