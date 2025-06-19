@@ -22,3 +22,19 @@ export default function useGlobalReducer() {
     const { dispatch, store } = useContext(StoreContext)
     return { dispatch, store };
 }
+
+
+
+
+
+// case "SET_CONTACTS":
+//   return {
+//     ...state,
+//     contacts: action.payload
+//   };
+
+// case "ADD_CONTACT":
+//   return {
+//     ...state,
+//     contacts: [...state.contacts, action.payload]
+//   };

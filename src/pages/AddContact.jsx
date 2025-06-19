@@ -35,39 +35,49 @@ export const AddContact = () => {
 
 
   const handleSaveContact = async () => {
-    // Create a new contact object with the form data.
-     const newContact = {
-        full_name: fullName,
-        email: Email,
-        agenda_slug: "Mocha",
-        address: Address,
-        phone: PhoneNumber
-  };
+    // Trim and validate input
+    const trimmedFullName = fullName.trim();
+    const trimmedEmail = Email.trim();
+    const trimmedAddress = Address.trim();
+    const trimmedPhone = PhoneNumber.trim();
 
-  try{
-    // Send a POST request to the API to save the new contact.
-        const response = await fetch(`${APIBaseUrl}/agendas/${username}/contacts`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(newContact)
-        });
+    if (!trimmedFullName || !trimmedEmail || !trimmedAddress || !trimmedPhone) {
+      alert("All fields are required.");
+      return;
+    }
 
-        if (response.ok) {
-            // If the request is successful, dispatch an action to update the global state.
-            dispatch({ type: "ADD_CONTACT", payload: newContact });
-            navigate("/"); // Navigate back to the contacts list.
-        } else {
-            console.error("Failed to save contact");
-        }
-    } catch (error) {
-        console.error("Error saving contact:", error);
-  }
-
-  console.log("Contact saved:", newContact);
-  console.log(handleSaveContact)
+    const newContact = {
+      name: trimmedFullName,         
+      email: trimmedEmail,
+      agenda_slug: "Mocha",
+      address: trimmedAddress,
+      phone: trimmedPhone
     };
+
+    try {
+      const response = await fetch(`${APIBaseUrl}/agendas/${username}/contacts/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newContact)
+      });
+
+      if (response.ok) {
+        dispatch({ type: "ADD_CONTACT", payload: newContact });
+        navigate("/");
+      } else {
+        const data = await response.json();
+        console.error("Failed to save contact", data);
+        alert("Failed to save contact: " + (data.msg || JSON.stringify(data)));
+      }
+    } catch (error) {
+      console.error("Error saving contact:", error);
+      alert("Error saving contact: " + error.message);
+    }
+
+    console.log("Contact saved:", newContact);
+  };
 
 
 
