@@ -27,19 +27,9 @@ export const Home = () => {
 
   useEffect(() => {
   const createAgendaAndFetchContacts = async () => {
+  
     try {
-      // Try to create the agenda (if it already exists, this will fail silently)
-      await fetch(`${API_URL}/agendas/${Username}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ slug: Username })
-      });
-    } catch (e) {
-      // Ignore errors (agenda might already exist)
-    }
 
-    try {
-      // Now fetch contacts
       const response = await fetch(`${API_URL}/agendas/${Username}`);
       const data = await response.json();
       console.log("Fetched contacts:", data.contacts);
@@ -88,8 +78,7 @@ const handleDeleteContact = async (contactId) => {
 
 				  {Array.isArray(store.contacts) && store.contacts.length > 0 ? (
         store.contacts.map((contact, index) => (
-            <Contact key={index, contact.id} contact={contact} 
-            onDelete={() => handleDeleteContact(contact.id)}/>
+            <Contact key={contact.id} contact={contact} onDelete={() => handleDeleteContact(contact.id)} />
         ))
     ) : (
         <div className="text-center text-muted p-5">

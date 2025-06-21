@@ -11,7 +11,7 @@ import { useState , useEffect } from "react";
 
 
 
-/// this is a page component for adding a new contact
+
 export const AddContact = () => {
 
     // Access the global state and dispatch function using the useGlobalReducer hook.
@@ -35,7 +35,6 @@ export const AddContact = () => {
 
 
   const handleSaveContact = async () => {
-    // Trim and validate input
     const trimmedFullName = fullName.trim();
     const trimmedEmail = Email.trim();
     const trimmedAddress = Address.trim();
