@@ -29,7 +29,16 @@ export const Home = () => {
   const createAgendaAndFetchContacts = async () => {
   
     try {
+      // should hopfuy creat an agenda if it doesn't exist
 
+       await fetch(`${API_URL}/agendas/${Username}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+
+      //fetchees
       const response = await fetch(`${API_URL}/agendas/${Username}`);
       const data = await response.json();
       console.log("Fetched contacts:", data.contacts);

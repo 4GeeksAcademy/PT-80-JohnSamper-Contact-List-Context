@@ -14,13 +14,6 @@ import React from "react";
 export const Contact = ({ contact, onDelete }) => {
     if(!contact) return null; 
 
-
-    // const [fullName, setFullName] = useState("");
-    // const [ Address , setAddress ] = useState("");
-    // const [ PhoneNumber , setPhoneNumber ] = useState("");
-    // const [Email, setEmail] = useState("");
-
-
     return (
         <div className="card d-flex  flex-row allign-items-center p-3  mx-auto px-5 py-4 custom-card-bg w-100 " >
             <div className= " contact-image v-20 " style={{ width: "285px"   }}>
@@ -38,8 +31,8 @@ export const Contact = ({ contact, onDelete }) => {
                 {contact.email} </li>
                 
             </ul>
-            <div className=" btn btn-link d-flex flex-colum justify-content-center align-items-center ms-auto pe-4 " onClick={() => navigate(`/edit/${contact.id}`)}>
-                <Link to="/AddContact">
+            <div className=" btn btn-link d-flex flex-colum justify-content-center align-items-center ms-auto pe-4 ">
+                <Link to={`/edit/${contact.id}`}>
                     <FontAwesomeIcon icon={faPenToSquare} className=" p-4 fs-4 text-white  " />
                 </Link>
                  
